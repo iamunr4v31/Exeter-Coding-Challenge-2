@@ -4,10 +4,10 @@ const {getStudents, addStudent, updateStudentMark, deleteStudentRec} = require("
 const Student = {
     type: 'object',
     properties: {
-        id: {
+        studentID: {
             type: 'string',
         },
-        name: {
+        studentName: {
             type: 'string',
         },
         subject1: {

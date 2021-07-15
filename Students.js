@@ -1,7 +1,7 @@
 let students = [
     {
-        id: "1",
-        name: "Ash",
+        studentID: "1",
+        studentstudentName: "Ash",
         subject1: "100",
         subject2: "100",
         subject3: "100",

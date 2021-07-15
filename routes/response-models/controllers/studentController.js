@@ -7,10 +7,10 @@ const getStudents = (_,response) => {
 
 const addStudent = (request, response) => {
     // add a new student record
-    const {id, name, subject1, subject2, subject3, subject4, subject5} = request.body;
+    const {studentID, studentName, subject1, subject2, subject3, subject4, subject5} = request.body;
     const student = {
-        id,
-        name,
+        studentID,
+        studentName,
         subject1,
         subject2,
         subject3,
@@ -22,8 +22,8 @@ const addStudent = (request, response) => {
 }
 
 const updateStudentMark = (request, response) => {
-    const {id, ...rest} = request.body; // mark = 'subject1' 100,80
-    let student = students.find(o => o.id === id);
+    const {studentID, ...rest} = request.body; // mark = 'subject1' 100,80
+    let student = students.find(o => o.studentID === studentID);
     for (let x in rest) {
         student[x] = rest[x];
     }
@@ -31,14 +31,14 @@ const updateStudentMark = (request, response) => {
 }
 
 const deleteStudentRec = (request, response) => {
-    const {id} = request.body;
-    student = students.find(o => o.id === id)
-    let idx = students.indexOf(student);
-    if (idx > -1) {
-        students.splice(idx, 1);
+    const {studentID} = request.body;
+    student = students.find(o => o.studentID === studentID)
+    let studentIDx = students.indexOf(student);
+    if (studentIDx > -1) {
+        students.splice(studentIDx, 1);
     }
     response.send(student)
-    console.log(students)
+    // console.log(students)
 }
 
 module.exports = {
